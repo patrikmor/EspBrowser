@@ -1,0 +1,46 @@
+﻿<Window x:Class="EspBrowser.Views.DialogNodeInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:EspBrowser.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance {x:Type vm:DialogNodeInfoViewModel}}"
+        WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        Title="{Binding Title}" Icon="/EspBrowser;component/Images/InformationSymbol_16x.png">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding OkCommand}" Key="Return" />
+        <KeyBinding Command="{Binding OkCommand}" Key="Esc" />
+    </Window.InputBindings>
+    <DockPanel Width="400">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <Button Content="OK" Width="75" Margin="5" Command="{Binding OkCommand}" />
+        </StackPanel>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0">Version</Label>
+            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Version}" BorderThickness="0" IsReadOnly="True" VerticalAlignment="Center" />
+            <Label Grid.Row="1">Chip ID</Label>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ChipId}" BorderThickness="0" IsReadOnly="True" VerticalAlignment="Center" />
+            <Label Grid.Row="2">Flash ID</Label>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FlashId}" BorderThickness="0" IsReadOnly="True" VerticalAlignment="Center" />
+            <Label Grid.Row="3">Flash size</Label>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding FlashSize}" BorderThickness="0" IsReadOnly="True" VerticalAlignment="Center" />
+            <Label Grid.Row="4">Flash mode</Label>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding FlashMode}" BorderThickness="0" IsReadOnly="True" VerticalAlignment="Center" />
+            <Label Grid.Row="5">Flash speed</Label>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding FlashSpeed}" BorderThickness="0" IsReadOnly="True" VerticalAlignment="Center" />
+        </Grid>
+    </DockPanel>
+</Window>

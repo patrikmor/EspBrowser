@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59B158DE-B710-4FCC-AA53-8003CBC9B926}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EspBrowser</RootNamespace>
+    <AssemblyName>EspBrowser</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.3\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
+      <HintPath>..\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmDialogs, Version=5.1.0.0, Culture=neutral, PublicKeyToken=3d3b9708589bc73e, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmDialogs.5.1.0\lib\net45\MvvmDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.3.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.3.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ActiveDocumentConverter.cs" />
+    <Compile Include="AwaitableRelayCommand.cs" />
+    <Compile Include="Boxes.cs" />
+    <Compile Include="CodeTextEditor.cs" />
+    <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="CustomCommands.cs" />
+    <Compile Include="ViewModels\DialogNodeInfoViewModel.cs" />
+    <Compile Include="ViewModels\DialogSettingsViewModel.cs" />
+    <Compile Include="Views\DialogAbout.xaml.cs">
+      <DependentUpon>DialogAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DialogAboutViewModel.cs" />
+    <Compile Include="Views\DialogFindReplace.xaml.cs">
+      <DependentUpon>DialogFindReplace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DialogNodeInfo.xaml.cs">
+      <DependentUpon>DialogNodeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DialogRename.xaml.cs">
+      <DependentUpon>DialogRename.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\DialogRenameViewModel.cs" />
+    <Compile Include="Views\DialogSettings.xaml.cs">
+      <DependentUpon>DialogSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DoubleClickCommandBehavior.cs" />
+    <Compile Include="LayoutInitializer.cs" />
+    <Compile Include="LuaCodeCompletion.cs" />
+    <Compile Include="LuaModuleCompletionItem.cs" />
+    <Compile Include="PanesStyleSelector.cs" />
+    <Compile Include="PanesTemplateSelector.cs" />
+    <Compile Include="SortAdorner.cs" />
+    <Compile Include="ViewModels\AnchorableViewModel.cs" />
+    <Compile Include="ViewModels\ContentViewModel.cs" />
+    <Compile Include="ViewModels\DocumentViewModel.cs" />
+    <Compile Include="ViewModels\FileViewModel.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\SpiffsViewModel.cs" />
+    <Compile Include="ViewModels\TerminalViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Views\SimplePieChart.xaml.cs">
+      <DependentUpon>SimplePieChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUtils.cs" />
+    <Page Include="Views\DialogAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DialogFindReplace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DialogNodeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DialogSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SimplePieChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Resources\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Views\DialogRename.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BraceFoldingStrategy.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LuaCompletionItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Lua.xshd" />
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Refresh_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Disconnect_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SerialPort_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ConnectFilled_grey_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Plugged_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Unplugged_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FileGroup_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Event_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Restart_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClearWindowContent_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Processor_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MemoryChip_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\WordWrap_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rename_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ScrollBox_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UploadFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DownloadFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OpenFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cut_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Copy_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Paste_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Redo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Undo_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\OpenFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Save_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SaveAll_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SaveAs_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NewFile_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NodeMcuUploader\NodeMcuUploader.csproj">
+      <Project>{bb33f159-c7d5-4d64-8dad-150f433c6a33}</Project>
+      <Name>NodeMcuUploader</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PrintPreview_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Run_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BuildSolution_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\InformationSymbol_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ASX_Run_blue_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\QuickFind_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\TransferUpload_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Numeric_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Restart_Red_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DotLarge_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RecordDot_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\StatusHelp_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Settings_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\QuickReplace_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CloseDocumentGroup_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Web_16x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
