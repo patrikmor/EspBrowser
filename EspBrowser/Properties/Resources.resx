@@ -130,7 +130,7 @@
     <value>GitHub</value>
   </data>
   <data name="About_GitHubUrl" xml:space="preserve">
-    <value>http://www.google.sk</value>
+    <value>https://github.com/patrikmor/EspBrowser</value>
   </data>
   <data name="About_Version" xml:space="preserve">
     <value>Version {0}</value>

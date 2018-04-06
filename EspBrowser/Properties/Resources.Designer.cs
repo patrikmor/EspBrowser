@@ -106,7 +106,7 @@ namespace EspBrowser.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://www.google.sk.
+        ///   Looks up a localized string similar to https://github.com/patrikmor/EspBrowser.
         /// </summary>
         public static string About_GitHubUrl {
             get {
