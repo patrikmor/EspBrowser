@@ -30,6 +30,9 @@ Only prerequisite is .NET Framework 4.5 and higher.
 - Delete file from device
 - Format SPIFFS filesystem
 
+### Download portable binary
+- [EspBrowser.zip](http://www.mdk.sk/EspBrowser.zip)
+
 ### Release history
 
 - 6\. April 2018 Initial release (1.0.0.0)
