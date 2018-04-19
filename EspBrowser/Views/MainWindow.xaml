@@ -478,6 +478,8 @@
                                           local:DoubleClickCommandBehavior.HandleDoubleClick="True"
                                           local:DoubleClickCommandBehavior.TheCommandToRun="{Binding OpenFileCommand}">
                                     <ListView.InputBindings>
+                                        <KeyBinding Command="{Binding ExecuteFileCommand}" Key="F5" />
+                                        <KeyBinding Command="{Binding CompileFileCommand}" Key="F7" />
                                         <KeyBinding Command="{Binding RenameFileCommand}" Key="F2" />
                                         <KeyBinding Command="{Binding DeleteFileCommand}" Key="Delete" />
                                         <KeyBinding Command="{Binding RefreshCommand}" Key="R" Modifiers="Ctrl" />
@@ -504,12 +506,12 @@
                                                     <Image Source="{DynamicResource Image_PrintPreview}"></Image>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Execute file" Command="{Binding ExecuteFileCommand}">
+                                            <MenuItem Header="Execute file" Command="{Binding ExecuteFileCommand}" InputGestureText="F5">
                                                 <MenuItem.Icon>
                                                     <Image Source="{DynamicResource Image_Run}"></Image>
                                                 </MenuItem.Icon>
                                             </MenuItem>
-                                            <MenuItem Header="Compile file" Command="{Binding CompileFileCommand}">
+                                            <MenuItem Header="Compile file" Command="{Binding CompileFileCommand}" InputGestureText="F7">
                                                 <MenuItem.Icon>
                                                     <Image Source="{DynamicResource Image_BuildSolution}"></Image>
                                                 </MenuItem.Icon>

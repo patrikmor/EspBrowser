@@ -441,13 +441,17 @@ namespace EspBrowser.ViewModels
       if(this.ActiveDocument.IsModified)
         this.ActiveDocument.Save(false);
 
-      // Check if file already exists on device
       var filename = this.ActiveDocument.FileName;
-      var exists = await this.Terminal.ExistsFile(filename);
-      if(exists)
+
+      // Check if file already exists on device
+      if(Settings.Default.DeviceOverwritePrompt)
       {
-        if(ShowQuestionOkCancel($"File {filename} already exists on device. Overwrite?", "File exists") != System.Windows.MessageBoxResult.OK)
-          return;
+        var exists = await this.Terminal.ExistsFile(filename);
+        if(exists)
+        {
+          if(ShowQuestionOkCancel($"File {filename} already exists on device. Overwrite?", "File exists") != MessageBoxResult.OK)
+            return;
+        }
       }
 
       // Write file to device
@@ -592,7 +596,14 @@ namespace EspBrowser.ViewModels
         if(Settings.Default.SaveLayout != vm.SaveLayout)
         {
           Settings.Default.SaveLayout = vm.SaveLayout;
-          save_settings              = true;
+          save_settings = true;
+        }
+
+        // DeviceOverwritePrompt
+        if(Settings.Default.DeviceOverwritePrompt != vm.DeviceOverwritePrompt)
+        {
+          Settings.Default.DeviceOverwritePrompt = vm.DeviceOverwritePrompt;
+          save_settings = true;
         }
 
         // Save user settings

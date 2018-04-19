@@ -116,5 +116,17 @@ namespace EspBrowser.Properties {
                 this["SaveLayout"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DeviceOverwritePrompt {
+            get {
+                return ((bool)(this["DeviceOverwritePrompt"]));
+            }
+            set {
+                this["DeviceOverwritePrompt"] = value;
+            }
+        }
     }
 }

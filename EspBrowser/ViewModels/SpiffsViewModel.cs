@@ -274,11 +274,14 @@ namespace EspBrowser.ViewModels
         var filename = Path.GetFileName(path);
 
         // Check if file already exists on device
-        bool exists = await this.Terminal.ExistsFile(filename);
-        if(exists)
+        if(Settings.Default.DeviceOverwritePrompt)
         {
-          if(this.parent.ShowQuestionOkCancel($"File {filename} already exists on device. Overwrite?", "File exists") != System.Windows.MessageBoxResult.OK)
-            return;
+          bool exists = await this.Terminal.ExistsFile(filename);
+          if(exists)
+          {
+            if(this.parent.ShowQuestionOkCancel($"File {filename} already exists on device. Overwrite?", "File exists") != System.Windows.MessageBoxResult.OK)
+              return;
+          }
         }
 
         // Write file to device

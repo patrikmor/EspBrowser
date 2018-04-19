@@ -24,6 +24,7 @@
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -43,8 +44,11 @@
             <xctk:IntegerUpDown Grid.Row="2" Grid.Column="1" Name="iud_recent_files_length" Minimum="0" Maximum="100" Value="{Binding RecentFilesLength}" Height="20" />
             <TextBlock Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Margin="5">files</TextBlock>
             <!--SaveLayout-->
-            <Label Grid.Row="3" Target="{Binding ElementName=chk_save_layout}">_Save window layout on exit</Label>
+            <Label Grid.Row="3" Target="{Binding ElementName=chk_save_layout}" MouseDown="Label_MouseDown">_Save window layout on exit</Label>
             <CheckBox Grid.Row="3" Grid.Column="1" Name="chk_save_layout" IsChecked="{Binding SaveLayout}" Height="20" VerticalContentAlignment="Center" />
+            <!--DeviceOverwritePrompt-->
+            <Label Grid.Row="4" Target="{Binding ElementName=chk_device_overwrite_prompt}" MouseDown="Label_MouseDown">_Ask for overwrite existing file on ESP</Label>
+            <CheckBox Grid.Row="4" Grid.Column="1" Name="chk_device_overwrite_prompt" IsChecked="{Binding DeviceOverwritePrompt}" Height="20" VerticalContentAlignment="Center" />
         </Grid>
     </DockPanel>
 </Window>

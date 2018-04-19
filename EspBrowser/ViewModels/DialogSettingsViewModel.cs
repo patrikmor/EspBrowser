@@ -13,6 +13,7 @@ namespace EspBrowser.ViewModels
     protected int send_history_length;
     protected int recent_files_length;
     protected bool save_layout;
+    protected bool device_overwrite_prompt;
     protected bool? dialog_result;
 
     public string Title
@@ -45,6 +46,12 @@ namespace EspBrowser.ViewModels
       set { Set(ref this.save_layout, value); }
     }
 
+    public bool DeviceOverwritePrompt
+    {
+      get { return this.device_overwrite_prompt; }
+      set { Set(ref this.device_overwrite_prompt, value); }
+    }
+
     public bool? DialogResult
     {
       get { return this.dialog_result; }
@@ -56,13 +63,14 @@ namespace EspBrowser.ViewModels
 
     public DialogSettingsViewModel(string title)
     {
-      this.Title             = title;
-      this.Timeout           = Settings.Default.Timeout;
-      this.SendHistoryLength = Settings.Default.SendHistoryLength;
-      this.RecentFilesLength = Settings.Default.RecentFilesLength;
-      this.SaveLayout        = Settings.Default.SaveLayout;
-      this.OkCommand         = new RelayCommand(OkExecuted);
-      this.CancelCommand     = new RelayCommand(CancelExecuted);
+      this.Title                 = title;
+      this.Timeout               = Settings.Default.Timeout;
+      this.SendHistoryLength     = Settings.Default.SendHistoryLength;
+      this.RecentFilesLength     = Settings.Default.RecentFilesLength;
+      this.SaveLayout            = Settings.Default.SaveLayout;
+      this.DeviceOverwritePrompt = Settings.Default.DeviceOverwritePrompt;
+      this.OkCommand             = new RelayCommand(OkExecuted);
+      this.CancelCommand         = new RelayCommand(CancelExecuted);
     }
 
     protected void OkExecuted()
