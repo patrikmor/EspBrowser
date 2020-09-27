@@ -22,6 +22,7 @@ namespace NodeMcuUploader
     public int Timeout { get; protected set; }
     public int BaudRate { get; protected set; }
     public bool EchoEnabled { get; protected set; }
+    public bool CtsHolding { get { return this.port.CtsHolding; } }
 
     protected SerialPort port;
 

@@ -5,30 +5,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d1p1:Ignorable="d"
-             StartupUri="Views/MainWindow.xaml" DispatcherUnhandledException="Application_DispatcherUnhandledException">
-    <Application.Resources>
+             StartupUri="Views/MainWindow.xaml"
+             DispatcherUnhandledException="Application_DispatcherUnhandledException">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!--Icons-->
+        <ResourceDictionary Source="Resources/Icons.xaml" />
+        <!--Application Resources-->
         <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!--Icons-->
-                <ResourceDictionary Source="Resources/Icons.xaml" />
-                <!--Application Resources-->
-                <ResourceDictionary>
-                    <!--Set Image properties-->
-                    <Style TargetType="{x:Type Image}">
-                        <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor" />
-                        <Style.Triggers>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.30" />
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                    <!--Set ListView properties-->
-                    <Style TargetType="{x:Type GridViewColumnHeader}">
-                        <Setter Property="HorizontalContentAlignment" Value="Left" />
-                    </Style>
-                    <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
-                </ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>
+          <!--Set Image properties-->
+          <Style TargetType="{x:Type Image}">
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="NearestNeighbor" />
+            <Style.Triggers>
+              <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.30" />
+              </Trigger>
+            </Style.Triggers>
+          </Style>
+          <!--Set ListView properties-->
+          <Style TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+          </Style>
+          <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
         </ResourceDictionary>
-    </Application.Resources>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
 </Application>

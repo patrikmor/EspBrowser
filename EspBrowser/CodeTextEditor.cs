@@ -44,6 +44,11 @@ namespace EspBrowser
       BorderBrush     = new SolidColorBrush(Colors.Silver);
       BorderThickness = new Thickness(1);
 
+      // Indentation settings
+      Options.IndentationSize = 2;
+      Options.ConvertTabsToSpaces = true;
+      Options.InheritWordWrapIndentation = false;
+
       // Create search panel
       this.searchPanel = SearchPanel.Install(TextArea);
 

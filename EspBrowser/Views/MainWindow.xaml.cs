@@ -1,11 +1,11 @@
-﻿using EspBrowser.Properties;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using Xceed.Wpf.AvalonDock.Layout.Serialization;
+using EspBrowser.Properties;
 
 namespace EspBrowser.Views
 {
@@ -64,7 +64,7 @@ namespace EspBrowser.Views
       try
       {
         XmlLayoutSerializer serializer = new XmlLayoutSerializer(docking_manager);
-        string path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, LAYOUT_FILENAME);
+        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LAYOUT_FILENAME);
         if(File.Exists(path))
         {
           File.Delete(path);
@@ -86,7 +86,7 @@ namespace EspBrowser.Views
       try
       {
         XmlLayoutSerializer serializer = new XmlLayoutSerializer(docking_manager);
-        string path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, LAYOUT_FILENAME);
+        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LAYOUT_FILENAME);
         if(File.Exists(path))
         {
           using(var file = File.OpenRead(path))

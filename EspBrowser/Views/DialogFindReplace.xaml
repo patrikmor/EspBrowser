@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EspBrowser.Views"
         mc:Ignorable="d"
         Title="Find and Replace" WindowStartupLocation="CenterOwner"
-        Width="300" SizeToContent="Height" ResizeMode="NoResize"
+        Width="300" SizeToContent="Height" MinWidth="300" MinHeight="200" ResizeMode="CanResizeWithGrip"
         WindowStyle="ToolWindow" ShowInTaskbar="False" Closed="Window_Closed">
     <Grid Margin="0,4">
         <Grid.RowDefinitions>

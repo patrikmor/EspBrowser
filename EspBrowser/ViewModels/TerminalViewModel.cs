@@ -24,6 +24,9 @@ namespace EspBrowser.ViewModels
     protected int baud_rate;
     protected int timeout;
     protected bool echo_enabled = true;
+    protected bool cts_holding;
+    protected bool dtr_enabled;
+    protected bool rts_enabled;
     protected int send_history_length;
     protected bool is_connected;
     protected bool is_enabled;
@@ -64,6 +67,24 @@ namespace EspBrowser.ViewModels
       set { Set(ref this.echo_enabled, value); }
     }
 
+    public bool CtsHolding
+    {
+      get { return this.cts_holding; }
+      set { Set(ref this.cts_holding, value); }
+    }
+
+    public bool DtrEnabled
+    {
+      get { return this.dtr_enabled; }
+      set { Set(ref this.dtr_enabled, value); }
+    }
+
+    public bool RtsEnabled
+    {
+      get { return this.rts_enabled; }
+      set { Set(ref this.rts_enabled, value); }
+    }
+
     public int SendHistoryLength
     {
       get { return this.send_history_length; }
@@ -81,8 +102,9 @@ namespace EspBrowser.ViewModels
           this.IsEnabled          = value;
           this.ConnectImageSource = WindowUtils.GetImage(value ? "Image_Disconnect" : "Image_Connect");
           this.ConnectToolTip     = (value ? DISCONNECT : CONNECT);
-          RaisePropertyChanged(nameof(IsDisconnected));
-          RaisePropertyChanged(nameof(ConnectImageSource));
+          this.CtsHolding         = (this.uploader?.CtsHolding ?? false);
+          RaisePropertyChanged(() => IsDisconnected);
+          RaisePropertyChanged(() => ConnectImageSource);
         }
       }
     }
